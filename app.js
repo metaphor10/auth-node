@@ -12,11 +12,8 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 var api = require('./routes/api');
 mongoose.connect(config.database);
+var configPort = require('./config');
 var app = express();
-app.use(function(req, res, next){
-  console.log('inside1', req.body);
-  next();
-})
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -34,11 +31,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 //   next();
 // });
 
-//    app.use('/', index);
-//    app.use('/users', users);
-app.get('/', function(req, res) {
-  res.send('Page under construction.');
-});
+app.use('/', index);
+
 
 app.use('/api', api);
 // catch 404 and forward to error handler
@@ -59,4 +53,11 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-module.exports = app;
+
+function start () {
+  app.listen(configPort().port)
+}
+
+module.exports = start
+
+start()

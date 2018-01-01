@@ -1,0 +1,37 @@
+{
+    "check-coverage": true,
+    "per-file": true,
+    "lines": 99,
+    "statements": 99,
+    "functions": 99,
+    "branches": 99,
+    "include": [
+      "config.js"
+    ],
+    "exclude": [
+      "bin/**/*.js",
+      "config/**/*.js",
+      "models/**/*.js",
+      "public/**/*.js",
+      "coverage/**/*.js",
+      "test/**/*.js",
+      "routes/**/*.js",
+
+      "app.js"
+
+    ],
+    "reporter": [
+      "text-summary",
+      "text",
+      "html"
+    ],
+    "require": [
+
+    ],
+    "extension": [
+      ".js"
+    ],
+    "cache": true,
+    "all": true,
+    "report-dir": "./coverage"
+}
