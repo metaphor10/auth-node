@@ -6,15 +6,19 @@
     "functions": 99,
     "branches": 99,
     "include": [
+      "config.js"
     ],
     "exclude": [
       "bin/**/*.js",
       "config/**/*.js",
       "models/**/*.js",
       "public/**/*.js",
-      "routes/**/*.js",
       "coverage/**/*.js",
+      "test/**/*.js",
+      "routes/**/*.js",
+
       "app.js"
+
     ],
     "reporter": [
       "text-summary",
